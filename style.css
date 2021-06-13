@@ -1,0 +1,75 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: #333;
+}
+
+a {
+  position: relative;
+  padding: 20px 20px 20px 30px;
+  color: white;
+  font-size: 20px;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 10px;
+  transform-style: preserve-3d;
+  transition: 0.5s;
+  z-index: 2;
+}
+
+a:hover {
+  background: linear-gradient(to left, #00ffff7a, #00e1ff7a);
+  box-shadow: 0px 0px 100px rgb(0, 255, 255);
+  transform: rotate(-30deg) skew(25deg);
+  transition-delay: 2s;
+}
+
+a:before,
+a:after {
+  content: "";
+  position: absolute;
+  width: 2px;
+  background: linear-gradient(to left, #00ffff7a, #00e1ff7a);
+  height: 100%;
+  pointer-events: none;
+  transform-style: linear;
+  transition-duration: 0.5s;
+  transition-property: width, opacity, transform, box-shadow;
+  z-index: 0;
+}
+
+a:before {
+  inset: 0;
+}
+
+a:after {
+  top: 0;
+  right: 0;
+}
+
+a:hover::before {
+  width: 100%;
+  opacity: 0.4;
+  transform: translate(5px, -5px);
+  box-shadow: 0px 0px 1px cyan;
+  transition-delay: 0s, 0.5s, 1s, 1.5s;
+}
+
+a:hover::after {
+  width: 100%;
+  opacity: 0.4;
+  transform: translate(10px, -10px);
+  box-shadow: 0px 0px 1px cyan;
+  transition-delay: 0s, 0.5s, 1s, 1.5s;
+}
